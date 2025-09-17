@@ -1,0 +1,51 @@
+<div class="produto-form-page">
+    <p *ngIf="message" class="message">{{message}}</p>
+    <h1>{{isEditing? 'Editar Produto' : 'Adicionar Produto'}}</h1>
+    <form (submit)="handleSubmit($event)">
+        <div class="form-group">
+            <label for="">Nome do produto</label>
+            <input type="text" [(ngModel)]="nome" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="">Sku</label>
+            <input type="text" [(ngModel)]="sku" name="sku" required>
+        </div>
+
+        <div class="form-group">
+            <label for="">Quantidade em estoque</label>
+            <input type="number" [(ngModel)]="quantidadeEstoque" name="quantidadeEstoque" required>
+        </div>
+
+        <div class="form-group">
+            <label for="">Preço</label>
+            <input type="number" [(ngModel)]="preco" name="preco" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="">Descrição</label>
+            <textarea [(ngModel)]="descricao" name="descricao" required></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label for="">Categoria</label>
+            <select [(ngModel)]="categoriaId" name="categoriaId" id="" required>
+                <option value="">Selecione uma categoria</option>
+                <option *ngFor="let categoria of categorias" [value]="categoria.id">{{categoria.nome}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="">Imagem do produto</label>
+            <input type="file" (change)="handleImageChange($event)">
+            <div *ngIf="imageUrl">
+                <img [src]="imageUrl" alt="preview" class="image-preview">
+            </div>
+        </div>
+
+        <button type="submit">{{isEditing? 'Editar Produto' : 'Adicionar Produto'}}</button>
+    </form>
+
+</div>

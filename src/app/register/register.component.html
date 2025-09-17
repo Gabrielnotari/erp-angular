@@ -1,0 +1,38 @@
+<div class="auth-container">
+  <h2>Cadastrar-se</h2>
+  <p *ngIf="message" class="message">{{ message }}</p>
+
+  <form (ngSubmit)="handleSubmit()">
+    <input
+      type="text"
+      placeholder="Nome*"
+      [(ngModel)]="formData.nome"
+      name="name"
+      required
+    />
+    <input
+      type="email"
+      placeholder="Email*"
+      [(ngModel)]="formData.email"
+      name="email"
+      required
+    />
+    <input
+      type="password"
+      placeholder="Senha*"
+      [(ngModel)]="formData.senha"
+      name="senha"
+      required
+    />
+    <input
+      type="number"
+      placeholder="Número de telefone*"
+      [(ngModel)]="formData.numeroTelefone"
+      name="numeroTelefone"
+      required
+    />
+
+    <button type="submit">Cadastrar</button>
+  </form>
+  <p>Já possui uma conta?<a routerLink="/login" routerLinkActive="router-link-active" >Login</a></p>
+</div>

@@ -1,0 +1,76 @@
+.categoria-page {
+    padding: 20px;
+    }
+     
+    .categoria-header {
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    }
+     
+    .categoria-header h1 {
+    color: #A0522D;
+    }
+     
+    .add-cat {
+    margin: 0 auto;
+    }
+     
+    .categoria-header input {
+    padding: 10px;
+    margin-right: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    }
+     
+    .categoria-header button {
+    padding: 12px 12px;
+    background-color: #A0522D;
+    font-size: 16px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    }
+     
+    .categoria-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+    }
+     
+    .categoria-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    margin: 5px;
+    font-size: 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    border-radius: 10px;
+    color: #2F4F4F;
+    font-weight: 550;
+    }
+     
+    .categoria-item:hover {
+    background-color: #f9ffff;
+    }
+     
+    .categoria-actions button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #17a2b8;
+    font-size: 16px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    }
+     
+    .categoria-actions button:last-child {
+    background-color: #dc3545;
+    }
+     
+     
+    

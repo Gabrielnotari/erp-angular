@@ -1,0 +1,33 @@
+<div class="perfil-page">
+    <p *ngIf="message" class="message">{{message}}</p>
+
+    <div *ngIf="user" class="perfil-card">
+        <h1>Olá, {{user.nome}}</h1>
+
+        <div class="perfil-info">
+
+            <div class="perfil-item">
+                <label for="">Nome</label>
+                <span>{{user.nome}}</span>
+            </div>
+
+            <div class="perfil-item">
+                <label for="">E-mail</label>
+                <span>{{user.email}}</span>
+            </div>
+
+
+            <div class="perfil-item">
+                <label for="">Número de telefone</label>
+                <span>{{user.numeroTelefone}}</span>
+            </div>
+
+            <div class="perfil-item">
+                <label for="">Cargo</label>
+                <span>{{user.role}}</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>

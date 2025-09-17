@@ -1,0 +1,14 @@
+<div class="imagem-container">
+  <h2>Gerador de Imagem</h2>
+
+  <input type="text" [(ngModel)]="prompt" placeholder="Digite o prompt" />
+  <button (click)="gerarImagem()" [disabled]="loading || !prompt">Gerar</button>
+
+  <div *ngIf="loading">Gerando imagem...</div>
+
+  <div *ngIf="imageUrl">
+    <h3>Resultado:</h3>
+    <img [src]="imageUrl" alt="Imagem gerada" />
+  </div>
+</div>
+

@@ -1,0 +1,26 @@
+<div class="auth-container">
+    <h2>Login</h2>
+    <p *ngIf="message" class="message">{{ message }}</p>
+  
+    <form (ngSubmit)="handleSubmit()">
+
+      <input
+        type="email"
+        placeholder="Email*"
+        [(ngModel)]="formData.email"
+        name="email"
+        required
+      />
+      <input
+        type="password"
+        placeholder="Senha*"
+        [(ngModel)]="formData.senha"
+        name="senha"
+        required
+      />
+
+  
+      <button type="submit">Login</button>
+    </form>
+    <p>Não possui uma conta ?<a routerLink="/register" routerLinkActive="router-link-active" >Cadastre-se</a></p>
+  </div>

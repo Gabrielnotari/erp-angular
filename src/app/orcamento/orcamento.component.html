@@ -1,0 +1,52 @@
+<div class="orcamentos-page">
+  <p *ngIf="message" class="message">{{ message }}</p>
+
+  <!-- TRANSCATIONS HEADER -->
+  <div class="orcamentos-header">
+    <h1>Orçamentos</h1>
+    <div class="orcamentos-search">
+      <input
+        type="text"
+        [(ngModel)]="searchInput"
+        placeholder="Buscar orçamentos ..."
+      />
+      <button (click)="handleSearch()">Buscar</button>
+    </div>
+  </div>
+
+  <!-- TRANSCATIONS TABLE -->
+  <div *ngIf="orcamentos.length > 0">
+    <table class="orcamentos-table">
+      <thead>
+        <tr>
+          <th>TIPO</th>
+          <th>STATUS</th>
+          <th>PREÇO TOTAL</th>
+          <th>TOTAL DE PRODUTOS</th>
+          <th>DATA</th>
+          <th>AÇÕES</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let orcamento of orcamentos">
+          <td>{{ orcamento.tipoOrcamento }}</td>
+          <td>{{ orcamento.status }}</td>
+          <td>{{ orcamento.precoTotal }}</td>
+          <td>{{ orcamento.totalProdutos }}</td>
+          <td>{{ orcamento.dataCriacao | date : "short" }}</td>
+          <td (click)="navigateTOOrcamentosDetailsPage(orcamento.id)">
+            <button>Ver detalhes</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (pageChange)="onPageChange($event)"
+  >
+  </app-pagination>
+</div>

@@ -1,0 +1,64 @@
+.imagem-container {
+  max-width: 1000px;           /* Limita a largura do container */
+  margin: 50px auto;           /* Centraliza horizontalmente e adiciona espaço acima */
+  padding: 20px;
+  background-color: #f9f9f9;  /* Fundo leve */
+  border-radius: 12px;        /* Cantos arredondados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: center;          /* Centraliza textos e elementos */
+  font-family: 'Arial', sans-serif;
+}
+
+.imagem-container h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+.imagem-container input[type="text"] {
+  width: 70%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.imagem-container input[type="text"]:focus {
+  border-color: #009688;
+}
+
+.imagem-container button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.imagem-container button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.imagem-container button:hover:not(:disabled) {
+  background-color: #00796b;
+}
+
+.imagem-container img {
+  margin-top: 20px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.imagem-container h3 {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #444;
+}

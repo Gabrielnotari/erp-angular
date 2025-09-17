@@ -1,0 +1,27 @@
+<div class="fornecedor-page">
+  <p *ngIf="message" class="message">{{ message }}</p>
+
+  <!-- FORNECEDOR HEADER -->
+  <div class="fornecedor-header">
+    <h1>Fornecedores</h1>
+    <div class="add-fornecedor">
+      <button (click)="navigateToAddFornecedorPage()">Adicionar fornecedor</button>
+    </div>
+  </div>
+
+  <!-- FORNECEDOR LIST -->
+  <ul class="fornecedor-list" *ngIf="fornecedores.length > 0">
+    <li
+      *ngFor="let fornecedor of fornecedores"
+      class="fornecedor-item"
+      [attr.key]="fornecedor.id"
+    >
+      <span>{{ fornecedor.nome }}</span>
+
+      <div class="fornecedor-actions">
+            <button (click)="navigateToEditFornecedorPage(fornecedor.id)" >Editar</button>
+            <button (click)="handleDeleteFornecedor(fornecedor.id)">Deletar</button>
+      </div>
+    </li>
+  </ul>
+</div>

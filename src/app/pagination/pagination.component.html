@@ -1,0 +1,29 @@
+<div class="pagination-container">
+    
+  <button
+    class="pagination-button"
+    [disabled]="currentPage === 1"
+    (click)="onPageChange(currentPage - 1)"
+  >
+    &laquo; Voltar
+  </button>
+
+    <!-- numeros da pagina -->
+  <button
+    *ngFor="let number of pageNumbers"
+    class="pagination-button"
+    [class.active]="currentPage === number"
+    (click)="onPageChange(number)"
+  >
+    {{ number }}
+  </button>
+
+    <!-- bota de proximo -->
+  <button
+    class="pagination-button"
+    [disabled]="currentPage === totalPages"
+    (click)="onPageChange(currentPage + 1)"
+  >
+    Próximo &raquo;
+  </button>
+</div>

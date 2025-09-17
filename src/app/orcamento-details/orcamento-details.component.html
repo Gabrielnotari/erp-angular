@@ -1,0 +1,65 @@
+<div class="orcamento-details-page">
+    <p *ngIf="message" class="message">{{message}}</p>
+    
+    <div *ngIf="orcamento">
+        <!-- Transaction Information -->
+         <div class="section-card">
+            <h2>Informação do orçamento</h2>
+            <p><strong>Tipo:</strong> {{orcamento.tipoOrcamento}}</p>
+            <p><strong>Status:</strong> {{orcamento.status}}</p>
+            <p><strong>Descrição:</strong> {{orcamento.descricao}}</p>
+            <p><strong>Total de produtos:</strong> {{orcamento.totalProdutos}}</p>
+            <p><strong>Preço total:</strong> {{orcamento.precoTotal | currency}}</p>
+            <p><strong>Data de criação:</strong> {{orcamento.dataCriacao | date:'short'}}</p>
+
+            <div *ngIf="orcamento.dataAtualizacao">
+                <p><strong>Data de atualização:</strong> {{orcamento.dataAtualizacao | date:'short'}}</p>
+            </div>
+         </div>
+
+         <!-- PRODUCT INFORMATION -->
+         <div class="section-card">
+            <h2>Informação do produto</h2>
+            <p><strong>Nome: </strong>{{orcamento.produto.nome}}</p>
+            <p><strong>SKU: </strong>{{orcamento.produto.sku}}</p>
+            <p><strong>Preço: </strong>{{orcamento.produto.preco | currency}}</p>
+            <p><strong>Quantidade em estoque:</strong> {{orcamento.produto.quantidadeEstoque}}</p>
+            <p><strong>Descrição:</strong> {{orcamento.produto.descricao}}</p>
+
+            <div *ngIf="orcamento.produto.imageUrl">
+                <img [src]="orcamento.produto.imageUrl" alt="preview">
+            </div>
+         </div>
+
+         <!-- USER ASSOCIATED WITH THE TRANSACTIONS -->
+         <div class="section-card">
+            <h2>Informação do usuário</h2>
+            <p><strong>Nome:</strong> {{orcamento.user.nome}}</p>
+            <p><strong>Email: </strong>{{orcamento.user.email}}</p>
+            <p><strong>Número de telefone: </strong>{{orcamento.user.numeroTelefone}}</p>
+            <p><strong>Role: </strong>{{orcamento.user.role}}</p>
+
+         </div>
+
+         <!-- USER ASSOCIATED WITH THE TRANSACTIONS -->
+         <div *ngIf="orcamento.fornecedor" class="section-card">
+            <h2>Informação do fornecedor</h2>
+            <p><strong>Nome: </strong>{{orcamento.fornecedor.nome}}</p>
+            <p><strong>Endereço: </strong>{{orcamento.fornecedor.endereco}}</p>
+         </div>
+
+         <!-- UPDATE TRANSACTION -->
+         <div class="section-card orcamento-staus-update">
+            <label for="">Status: </label>
+            <select [(ngModel)]="status" id="">
+                <option value="PENDENTE">PENDENTE</option>
+                <option value="PROCESSANDO">PROCESSANDO</option>
+                <option value="COMPLETO">COMPLETO</option>
+                <option value="CANCELADO">CANCELADO</option>
+            </select>
+            <button (click)="handleUpdateStatus()">Atualizar status </button>
+         </div>
+
+    </div>
+
+</div>
