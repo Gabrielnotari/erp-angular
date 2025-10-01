@@ -38,7 +38,7 @@
     button[type="submit"] {
     width: 100%;
     padding: 12px;
-    background-color: #A0522D;
+    background-color: #1b5e20;
     color: white;
     border: none;
     border-radius: 4px;
@@ -52,7 +52,7 @@
     }
      
     .auth-container button:hover {
-    background-color: #2F4F4F;
+    background-color: #539b57;
     }
      
     .error-message {
@@ -67,7 +67,7 @@
     }
      
     .auth-container a {
-    color: #A0522D;
+    color: #1b5e20;
     text-decoration: none;
     font-weight: 700;
     }

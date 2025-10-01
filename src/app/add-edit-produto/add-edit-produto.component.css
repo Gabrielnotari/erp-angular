@@ -4,14 +4,14 @@
     margin: 0 auto;
     padding: 20px;
     background-color: #fefefe;
-    box-shadow: 0 1px 1px #A0522D;
+    box-shadow: 0 1px 1px #2e7d32;
     border-radius: 10px;
     }
      
     .produto-form-page h1 {
     font-size: 2rem;
     font-weight: bold;
-    color: #A0522D;
+    color: #2e7d32;
     text-align: center;
     margin-bottom: 2rem;
     }
@@ -59,7 +59,7 @@
      
     .produto-form-page button {
     padding: 12px 20px;
-    background-color: #A0522D;
+    background-color: #2e7d32;
     color: white;
     border: none;
     border-radius: 5px;

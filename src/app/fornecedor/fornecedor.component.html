@@ -5,7 +5,10 @@
   <div class="fornecedor-header">
     <h1>Fornecedores</h1>
     <div class="add-fornecedor">
-      <button (click)="navigateToAddFornecedorPage()">Adicionar fornecedor</button>
+      <button mat-raised-button color="primary" class="btn" (click)="navigateToAddFornecedorPage()">
+        <mat-icon>add</mat-icon>
+        Novo fornecedor
+      </button>
     </div>
   </div>
 
@@ -19,8 +22,12 @@
       <span>{{ fornecedor.nome }}</span>
 
       <div class="fornecedor-actions">
-            <button (click)="navigateToEditFornecedorPage(fornecedor.id)" >Editar</button>
-            <button (click)="handleDeleteFornecedor(fornecedor.id)">Deletar</button>
+            <button mat-icon-button class="btn-edit" (click)="navigateToEditFornecedorPage(fornecedor.id)" >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button class="btn-delete" (click)="handleDeleteFornecedor(fornecedor.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
       </div>
     </li>
   </ul>

@@ -5,25 +5,36 @@
 
   <div class="categoria-header">
     <h1>Categorias</h1>
-    <!-- FORMULARIO PARA ADICIONAR E EDITAR-->
+
+    <!-- FORMULARIO À DIREITA -->
     <div class="add-cat">
       <input
         type="text"
         [(ngModel)]="categoryName"
         placeholder="Nome da categoria"
       />
-      <button *ngIf="!isEditing" (click)="addCategory()">Adicionar categoria</button>
-      <button *ngIf="isEditing" (click)="editCategory()">Editar Categoria</button>
+      <button *ngIf="!isEditing" mat-raised-button color="primary" class="btn" (click)="addCategory()">
+        <mat-icon>add</mat-icon>
+        Adicionar Categoria
+      </button>
+      <button *ngIf="isEditing" class="btn-edit-form" (click)="editCategory()">
+        <mat-icon>edit</mat-icon>
+        Editar Categoria
+      </button>
     </div>
   </div>
 
-  <!-- DISPLAY THE CATEGORIAS-->
+  <!-- DISPLAY CATEGORIAS -->
   <ul *ngIf="categories.length > 0" class="categoria-list">
     <li *ngFor="let categoria of categories" class="categoria-item">
       <span>{{ categoria.nome }}</span>
       <div class="categoria-actions">
-        <button (click)="handleEditCategory(categoria)">Editar</button>
-        <button (click)="handleDeleteCategory(categoria.id)">Deletar</button>
+        <button mat-icon-button class="btn-edit" (click)="handleEditCategory(categoria)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button class="btn-delete" (click)="handleDeleteCategory(categoria.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
       </div>
     </li>
   </ul>

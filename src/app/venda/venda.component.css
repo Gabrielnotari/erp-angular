@@ -10,7 +10,7 @@
     .saida-form-page h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #A0522D;
+    color: #2e7d32;
     }
      
     .saida-form-page .form-group {
@@ -39,5 +39,15 @@
     .saida-form-page .form-group textarea {
     resize: vertical;
     height: 100px;
+    }
+
+    .btn{
+    font-size: 16px;
+    background-color: #2e7d32;
+    font-weight: normal;
+    }
+
+    .btn:hover {
+    background-color: #5eb362;
     }
     

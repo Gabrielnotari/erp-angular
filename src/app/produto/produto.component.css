@@ -1,130 +1,77 @@
- 
 .produto-page {
-    padding: 20px;
-    background-color: #f3f4f6;
-    }
-     
-    .produto-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    }
-     
-    .produto-header h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #A0522D;
-    }
-     
-    .produto-image {
-    width: 100%;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-     
-    .add-produto-btn {
-    padding: 13px 20px;
-    background-color: #A0522D;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    }
-     
-    .add-produto-btn:hover {
-    background-color: #2F4F4F;
-    }
-    .produto-list {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* Display 7 items por linha */
-    gap: 15px;
-    /* Aumento do gap para melhor espaçamento entre os itens */
-    }
-     
-    .produto-item {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-     
-    }
-     
-    .produto-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .produto-info {
-    text-align: center;
-    }
-     
-    .produto-info .name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #181717;
-    margin-bottom: 35px;
-    }
-     
-    .produto-info .name {
-    color: #2F4F4F;
-    }
-     
-    .produto-info .sku,
-    .produto-info .price,
-    .produto-info .quantity {
-     
-    color: #1b1b1b;
-    margin: 10px;
-    /* color: #014646; */
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    }
-     
-    .produto-actions {
-    display: flex;
-    justify-content: center;
-    margin-top: 27px;
-    }
-     
-    .edit-btn,
-    .delete-btn {
-    padding: 8px 15px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    }
-     
-    .edit-btn {
-    background-color: #A0522D;
-    color: white;
-    }
-     
-    .edit-btn:hover {
-    background-color: #2F4F4F;
-    }
-     
-    .delete-btn {
-    background-color: #dc3545;
-    color: white;
-    }
-     
-    .delete-btn:hover {
-    background-color: #a5202e;
-    }
-     
-    .loading {
-    font-size: 1.2rem;
-    color: #666;
-    text-align: center;
-    margin-top: 50px;
-    }
-    
+  padding: 20px;
+}
+
+h1 {
+  color: #2e7d32;
+}
+
+.produto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.produto-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.produto-table th,
+.produto-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.produto-table th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #444;
+}
+
+.produto-table tr:hover td {
+  background: #f9f9f9;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Botão de edição */
+.btn-edit {
+  color: #1976d2; /* Azul Material */
+  border-radius: 50%;
+  padding: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-edit:hover {
+  background-color: #e3f2fd;
+  color: #1976d2;
+
+}
+
+/* Botão de exclusão */
+.btn-delete {
+
+  color: #d32f2f; /* Vermelho Material */
+  border-radius: 50%;
+  padding: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.btn{
+  font-size: 16px;
+}

@@ -1,52 +1,102 @@
 .orcamentos-page {
-    padding: 20px;
-    }
-    h1{
-    color: #c250c2;
-    color: #A0522D;
-    }
-     
-    .orcamentos-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    }
-     
-    .orcamentos-search {
-    display: flex;
-    gap: 10px;
-    }
-     
-    .orcamentos-search input {
-    border: 1px solid #A0522D;
-    padding: 10px;
-    border-radius: 4px;
-    }
-     
-    .orcamentos-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    }
-     
-    .orcamentos-table th,
-    .orcamentos-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-    }
-     
-    .orcamentos-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-    }
-     
-    .orcamentos-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-    }
-     
-    .orcamentos-table tr:hover {
-    background-color: #e9e9e9;
-    }
-    
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  color: #2e7d32;
+}
+
+/* HEADER */
+.orcamentos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.orcamentos-search {
+  display: flex;
+  gap: 10px;
+}
+
+.orcamentos-search input {
+  border: 1px solid #2e7d32;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* TABLE MODERNA */
+.orcamentos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orcamentos-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #444;
+  background: #fafafa;
+}
+
+.orcamentos-table td {
+  padding: 14px 16px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+/* Linhas com efeito "card" */
+.orcamentos-table tr {
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.orcamentos-table tr td:first-child {
+  border-radius: 12px 0 0 12px;
+}
+
+.orcamentos-table tr td:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+/* STATUS BADGES */
+.status-badge {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 12px;
+}
+
+.status-completo {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-pendente {
+  background: #fff8e1;
+  color: #ef6c00;
+}
+
+.status-cancelado {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* Botão */
+button {
+  font-size: 15px;
+  font-weight: normal;
+  padding: 6px 12px;
+  border: none;
+  background: #2e7d32;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5eb362;
+}

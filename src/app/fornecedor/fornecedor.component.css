@@ -6,18 +6,14 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    color: #A0522D;
+    color: #2e7d32;
     margin-left: 10px;
     }
-     
-    .fornecedor-header button {
-    padding: 12px 12px;
-    background-color: #A0522D;
-    font-size: 16px;
-    color: white;
-    border: none;
-    cursor: pointer;
+
+    .btn{
+        font-size: 18px;
     }
+     
      
     .add-fornecedor {
     margin: 0 auto;
@@ -60,3 +56,24 @@
     background-color: #dc3545;
     }
     
+    /* Botão Editar */
+.btn-edit {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.btn-edit:hover {
+  background: #1976d2;
+  color: white;
+}
+
+/* Botão Excluir */
+.btn-delete {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.btn-delete:hover {
+  background: #d32f2f;
+  color: white;
+}

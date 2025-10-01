@@ -3,10 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { PaginationComponent } from '../pagination/pagination.component';
 import { ApiService } from '../service/api.service';
 import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-produto',
-  imports: [CommonModule, PaginationComponent],
+  imports: [CommonModule, PaginationComponent, MatCardModule, MatButtonModule, MatIconModule],
   templateUrl: './produto.component.html',
   styleUrl: './produto.component.css',
 })

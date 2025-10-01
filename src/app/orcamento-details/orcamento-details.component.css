@@ -26,7 +26,7 @@
 .section-card h2 {
   margin-bottom: 15px;
   font-size: 1.8em;
-  color: #A0522D;
+  color: #2e7d32;
   border-bottom: 2px solid #e5e7eb;
   padding-bottom: 10px;
 }
@@ -88,7 +88,7 @@
 .orcamento-status-update button {
   padding: 10px 15px;
   font-size: 1rem;
-  background-color: #A0522D;
+  background-color: #2e7d32;
   color: #ffffff;
   border: none;
   border-radius: 8px;

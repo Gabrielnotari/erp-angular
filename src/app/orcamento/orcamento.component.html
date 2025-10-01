@@ -1,7 +1,7 @@
 <div class="orcamentos-page">
   <p *ngIf="message" class="message">{{ message }}</p>
 
-  <!-- TRANSCATIONS HEADER -->
+  <!-- HEADER -->
   <div class="orcamentos-header">
     <h1>Orçamentos</h1>
     <div class="orcamentos-search">
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <!-- TRANSCATIONS TABLE -->
+  <!-- TABLE -->
   <div *ngIf="orcamentos.length > 0">
     <table class="orcamentos-table">
       <thead>
@@ -31,12 +31,28 @@
       <tbody>
         <tr *ngFor="let orcamento of orcamentos">
           <td>{{ orcamento.tipoOrcamento }}</td>
-          <td>{{ orcamento.status }}</td>
-          <td>{{ orcamento.precoTotal }}</td>
+
+          <!-- STATUS como badge -->
+          <td>
+            <span
+              class="status-badge"
+              [ngClass]="{
+                'status-completo': orcamento.status === 'COMPLETO',
+                'status-pendente': orcamento.status === 'PENDENTE',
+                'status-cancelado': orcamento.status === 'CANCELADO'
+              }"
+            >
+              {{ orcamento.status }}
+            </span>
+          </td>
+
+          <td>R$ {{ orcamento.precoTotal }}</td>
           <td>{{ orcamento.totalProdutos }}</td>
           <td>{{ orcamento.dataCriacao | date : "short" }}</td>
-          <td (click)="navigateTOOrcamentosDetailsPage(orcamento.id)">
-            <button>Ver detalhes</button>
+          <td>
+            <button (click)="navigateTOOrcamentosDetailsPage(orcamento.id)">
+              Ver detalhes
+            </button>
           </td>
         </tr>
       </tbody>

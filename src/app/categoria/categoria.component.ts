@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../service/api.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 interface Categoria {
   id: string,
@@ -11,7 +14,7 @@ interface Categoria {
 @Component({
   selector: 'app-categoria',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MatCardModule, MatButtonModule, MatIconModule],
   templateUrl: './categoria.component.html',
   styleUrl: './categoria.component.css'
 })

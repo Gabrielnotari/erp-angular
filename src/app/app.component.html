@@ -1,26 +1,75 @@
 <div class="dashboard-layout">
   <!-- SIDEBAR -->
   <div class="sidebar">
-    
+    <!-- Logo -->
     <img src="assets/imagens/logo-md-final.png" alt="Logo Marcenaria" />
-    
-      <ul class="nav-links">
-      <li *ngIf="isAuth()"><a routerLink="/dashboard">Dashboard</a></li>
-      <li *ngIf="isAuth()"><a routerLink="/orcamentos">Orçamentos</a></li>
-      <li *ngIf="isAdmin()"><a routerLink="/categorias">Categorias</a></li>
-      <li *ngIf="isAdmin()"><a routerLink="/produtos">Produtos</a></li>
-      <li *ngIf="isAdmin()"><a routerLink="/fornecedores">Fornecedores</a></li>
-      <li *ngIf="isAuth()"><a routerLink="/compra">Compras</a></li>
-      <li *ngIf="isAuth()"><a routerLink="/venda">Saídas</a></li>
-      <li *ngIf="isAuth()"><a routerLink="/perfil">Perfil</a></li>
-      <li *ngIf="isAuth()"><a routerLink="/imagem">Gerador de imagem</a></li>
-      <li *ngIf="!isAuth()"><a routerLink="/login">Login</a></li>
-      <li *ngIf="!isAuth()"><a routerLink="/register">Cadastrar-se</a></li>
-      <li *ngIf="isAuth()"><a (click)="logOut()">Sair</a></li>
+
+    <!-- Menu -->
+    <ul class="nav-links">
+      <li *ngIf="isAuth()">
+        <a routerLink="/dashboard" routerLinkActive="active">
+          <i class="material-icons">dashboard</i> Dashboard
+        </a>
+      </li>
+      <li *ngIf="isAuth()">
+        <a routerLink="/orcamentos" routerLinkActive="active">
+          <i class="material-icons">request_quote</i> Orçamentos
+        </a>
+      </li>
+      <li *ngIf="isAdmin()">
+        <a routerLink="/categorias" routerLinkActive="active">
+          <i class="material-icons">category</i> Categorias
+        </a>
+      </li>
+      <li *ngIf="isAdmin()">
+        <a routerLink="/produtos" routerLinkActive="active">
+          <i class="material-icons">inventory_2</i> Produtos
+        </a>
+      </li>
+      <li *ngIf="isAdmin()">
+        <a routerLink="/fornecedores" routerLinkActive="active">
+          <i class="material-icons">local_shipping</i> Fornecedores
+        </a>
+      </li>
+      <li *ngIf="isAuth()">
+        <a routerLink="/compra" routerLinkActive="active">
+          <i class="material-icons">shopping_cart</i> Compras
+        </a>
+      </li>
+      <li *ngIf="isAuth()">
+        <a routerLink="/venda" routerLinkActive="active">
+          <i class="material-icons">logout</i> Saídas
+        </a>
+      </li>
+      <li *ngIf="isAuth()">
+        <a routerLink="/perfil" routerLinkActive="active">
+          <i class="material-icons">person</i> Perfil
+        </a>
+      </li>
+      <li *ngIf="isAuth()">
+        <a routerLink="/imagem" routerLinkActive="active">
+          <i class="material-icons">image</i> Gerador de imagem
+        </a>
+      </li>
+      <li *ngIf="!isAuth()">
+        <a routerLink="/login">
+          <i class="material-icons">login</i> Login
+        </a>
+      </li>
+      <li *ngIf="!isAuth()">
+        <a routerLink="/register">
+          <i class="material-icons">app_registration</i> Cadastrar-se
+        </a>
+      </li>
+      <li *ngIf="isAuth()">
+        <a (click)="logOut()">
+          <i class="material-icons">exit_to_app</i> Sair
+        </a>
+      </li>
     </ul>
   </div>
 
-  <!-- CONTEUDO PRINCIPAL -->
+  <!-- CONTEÚDO PRINCIPAL -->
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>

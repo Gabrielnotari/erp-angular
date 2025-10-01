@@ -2,10 +2,13 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { ApiService } from './service/api.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,  RouterLink, CommonModule],
+  imports: [RouterOutlet,  RouterLink, CommonModule, MatCardModule, MatButtonModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
