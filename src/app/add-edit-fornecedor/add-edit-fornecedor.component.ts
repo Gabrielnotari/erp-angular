@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-add-edit-fornecedor',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink],
+  imports: [FormsModule, CommonModule, ],
   templateUrl: './add-edit-fornecedor.component.html',
   styleUrl: './add-edit-fornecedor.component.css'
 })
@@ -71,24 +71,24 @@ export class AddEditFornecedorComponent implements OnInit {
       this.apiService.updateFornecedor(this.fornecedorId!, fornecedorData).subscribe({
         next:(res:any) =>{
           if (res.status === 200) {
-            this.showMessage("Supplier updated successfully");
+            this.showMessage("Fornecedor atualizado com sucesso");
             this.router.navigate(['/fornecedores'])
           }
         },
         error:(error) =>{
-          this.showMessage(error?.error?.message || error?.message || "Unable to edit supplier" + error)
+          this.showMessage(error?.error?.message || error?.message || "Não foi possível editar" + error)
         }
       })
     } else {
       this.apiService.addFornecedor(fornecedorData).subscribe({
         next:(res:any) =>{
           if (res.status === 200) {
-            this.showMessage("Supplier Added successfully");
+            this.showMessage("Fornecedor adicionado com sucesso");
             this.router.navigate(['/fornecedores'])
           }
         },
         error:(error) =>{
-          this.showMessage(error?.error?.message || error?.message || "Unable to Add supplier" + error)
+          this.showMessage(error?.error?.message || error?.message || "Não foi possível adicionar o fornecedor" + error)
         }
       })
     }

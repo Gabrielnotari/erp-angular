@@ -13,9 +13,8 @@
         [(ngModel)]="categoryName"
         placeholder="Nome da categoria"
       />
-      <button *ngIf="!isEditing" mat-raised-button color="primary" class="btn" (click)="addCategory()">
-        <mat-icon>add</mat-icon>
-        Adicionar Categoria
+      <button *ngIf="!isEditing" class="btn-novo" (click)="addCategory()">
+        + Adicionar Categoria
       </button>
       <button *ngIf="isEditing" class="btn-edit-form" (click)="editCategory()">
         <mat-icon>edit</mat-icon>

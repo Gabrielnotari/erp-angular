@@ -31,6 +31,11 @@
           <i class="material-icons">local_shipping</i> Fornecedores
         </a>
       </li>
+      <li *ngIf="isAdmin()">
+        <a routerLink="/projetos" routerLinkActive="active">
+          <i class="material-icons">assignment</i> Projetos
+        </a>
+      </li>
       <li *ngIf="isAuth()">
         <a routerLink="/compra" routerLinkActive="active">
           <i class="material-icons">shopping_cart</i> Compras

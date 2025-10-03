@@ -123,8 +123,15 @@
   background: #86cc8a;
 }
 
-.btn {
-    font-size: 16px;
+.btn-novo {
+  background: #1b5e20;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 

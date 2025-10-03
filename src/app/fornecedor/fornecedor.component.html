@@ -1,33 +1,28 @@
 <div class="fornecedor-page">
   <p *ngIf="message" class="message">{{ message }}</p>
 
-  <!-- FORNECEDOR HEADER -->
+  <!-- HEADER -->
   <div class="fornecedor-header">
     <h1>Fornecedores</h1>
     <div class="add-fornecedor">
-      <button mat-raised-button color="primary" class="btn" (click)="navigateToAddFornecedorPage()">
-        <mat-icon>add</mat-icon>
-        Novo fornecedor
+      <button class="btn-novo" (click)="navigateToAddFornecedorPage()">
+        + Novo Fornecedor
       </button>
     </div>
   </div>
 
-  <!-- FORNECEDOR LIST -->
+  <!-- LISTA -->
   <ul class="fornecedor-list" *ngIf="fornecedores.length > 0">
-    <li
-      *ngFor="let fornecedor of fornecedores"
-      class="fornecedor-item"
-      [attr.key]="fornecedor.id"
-    >
+    <li *ngFor="let fornecedor of fornecedores" class="fornecedor-item" [attr.key]="fornecedor.id">
       <span>{{ fornecedor.nome }}</span>
 
       <div class="fornecedor-actions">
-            <button mat-icon-button class="btn-edit" (click)="navigateToEditFornecedorPage(fornecedor.id)" >
-              <mat-icon>edit</mat-icon>
-            </button>
-            <button mat-icon-button class="btn-delete" (click)="handleDeleteFornecedor(fornecedor.id)">
-              <mat-icon>delete</mat-icon>
-            </button>
+        <button mat-icon-button class="btn-edit" (click)="navigateToEditFornecedorPage(fornecedor.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button class="btn-delete" (click)="handleDeleteFornecedor(fornecedor.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
       </div>
     </li>
   </ul>

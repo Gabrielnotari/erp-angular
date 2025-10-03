@@ -1,0 +1,85 @@
+<div class="projetos-container">
+  <div class="header">
+    <h2>Projetos</h2>
+    <p>Acompanhe todos os seus projetos</p>
+  </div>
+
+  <div class="toolbar">
+    <input
+      type="text"
+      placeholder="Buscar por projeto ou cliente..."
+      [(ngModel)]="filtro"
+      class="search-input"
+    />
+    <button class="btn-novo" (click)="navigateToAddProjetoPage()">
+      + Novo Projeto
+    </button>
+  </div>
+
+  <div class="cards-container">
+    <div class="card" *ngFor="let projeto of projetosFiltrados">
+      <!-- Header do card -->
+      <div class="card-header">
+        <div class="left">
+          <div class="title-status">
+            <h3 class="project-title">{{ projeto.nomeProjeto }}</h3>
+            <span class="status" [ngClass]="getStatusClass(projeto.status)">
+              {{ projeto.status }}
+            </span>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <button
+            mat-icon-button
+            class="edit"
+            (click)="navigateToEditProjetoPage(projeto.id)"
+            title="Editar"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            class="delete"
+            (click)="handleDeleteProjeto(projeto.id)"
+            title="Deletar"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Corpo do card -->
+      <div class="card-body">
+        <p class="cliente">
+          <mat-icon class="icon-sm" fontSet="material-icons">person</mat-icon>
+          <span>Cliente: {{ projeto.clienteNome || "Sem cliente" }}</span>
+        </p>
+
+        <div class="datas">
+          <div class="date-line">
+            <mat-icon class="icon-sm" fontSet="material-icons"
+              >calendar_today</mat-icon
+            >
+            <span>Início: {{ projeto.dataInicio | date : "dd/MM/yyyy" }}</span>
+          </div>
+          <div class="date-line">
+            <mat-icon class="icon-sm" fontSet="material-icons">event</mat-icon>
+            <span>
+              Previsão:
+              {{
+                projeto.previsaoEntrega
+                  ? (projeto.previsaoEntrega | date : "dd/MM/yyyy")
+                  : "Não definida"
+              }}
+            </span>
+          </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="valor">R$ {{ projeto.valor | number : "1.0-0" }}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -140,6 +140,38 @@ export class ApiService {
     });
   }
 
+  /** PROJETO API */
+addProjeto(body: any): Observable<any> {
+  return this.http.post(`${ApiService.BASE_URL}/projetos/add`, body, {
+    headers: this.getHeader(),
+  });
+}
+
+getAllProjetos(): Observable<any> {
+  return this.http.get(`${ApiService.BASE_URL}/projetos/todos`, {
+    headers: this.getHeader(),
+  });
+}
+
+getProjetoById(id: string): Observable<any> {
+  return this.http.get(`${ApiService.BASE_URL}/projetos/${id}`, {
+    headers: this.getHeader(),
+  });
+}
+
+updateProjeto(id: string, body: any): Observable<any> {
+  return this.http.put(`${ApiService.BASE_URL}/projetos/atualizar/${id}`, body, {
+    headers: this.getHeader(),
+  });
+}
+
+deleteProjeto(id: string): Observable<any> {
+  return this.http.delete(`${ApiService.BASE_URL}/projetos/deletar/${id}`, {
+    headers: this.getHeader(),
+  });
+}
+
+
 
 
 

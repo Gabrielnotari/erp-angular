@@ -14,6 +14,8 @@ import { OrcamentoDetailsComponent } from './orcamento-details/orcamento-details
 import { PerfilComponent } from './perfil/perfil.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ImagemComponent } from './imagem/imagem.component';
+import { AddEditProjetoComponent } from './add-edit-projeto/add-edit-projeto.component';
+import { ProjetoComponent } from './projeto/projeto.component';
 
 export const routes: Routes = [
 
@@ -25,6 +27,10 @@ export const routes: Routes = [
   { path: 'fornecedores', component: FornecedorComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
   { path: 'edit-fornecedor/:fornecedorId', component: AddEditFornecedorComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
   { path: 'add-fornecedor', component: AddEditFornecedorComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
+
+  { path: 'projetos', component: ProjetoComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
+  { path: 'edit-projeto/:projetoId', component: AddEditProjetoComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
+  { path: 'add-projeto', component: AddEditProjetoComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
 
   { path: 'produtos', component: ProdutoComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
   { path: 'edit-produto/:produtoId', component: AddEditProdutoComponent, canActivate:[GuardService], data: {requiresAdmin: true} },

@@ -1,0 +1,221 @@
+.projetos-container {
+  padding: 20px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Header */
+.header h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #2e7d32;
+}
+.header p {
+  margin: 4px 0 18px;
+  color: #666;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.search-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  font-size: 16px;
+}
+.btn-novo {
+  background: #1b5e20;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+/* Grid */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start; /* ou center se quiser centralizar tudo */
+}
+
+/* Card */
+.card {
+  flex: 1 1 420px; /* mínimo maior */
+  max-width: 480px; /* limite maior */
+  min-height: 280px; /* altura mínima maior */
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header inside card */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* centraliza verticalmente */
+  gap: 12px;
+  margin-bottom: 0;       /* cola o header no corpo */
+  padding-bottom: 0; 
+}
+
+.title-status {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* diminui o espaço entre nome e status */
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;   /* NÃO quebrar linha */
+  white-space: nowrap; /* evita quebra de texto */
+}
+
+.project-title {
+  margin: 0;            /* remove margin default do h3 */
+  font-size: 20px;      /* maior */
+  font-weight: 700;
+  line-height: 1;       /* elimina espaço vertical da linha */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 140px); /* reserva espaço pra status + ícones */
+}
+.left {
+  flex: 1;
+}
+.project-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1f2937;
+}
+
+/* right side: status + actions */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* status badge */
+.status {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  display: inline-block;
+}
+
+/* map de cores por status (normalizei as classes via getStatusClass) */
+.status.AGUARDANDO_INICIO {
+  background: #fff3cd;
+  color: #856404;
+}
+.status.EM_PRODUCAO, .status.EM_PRODUÇÃO, .status.EM_PRODUÇÃO /* variações */ {
+  background: #d4edda;
+  color: #155724;
+}
+.status.FINALIZADO {
+  background: #e6eef4;
+  color: #1b5e20;
+}
+
+/* Top action buttons (edit / delete) */
+.top-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+/* Editar */
+button.edit mat-icon {
+  color: #2d6cdf; /* azul */
+}
+
+button.edit:hover {
+  background-color: #e3f2fd; /* fundo leve no hover */
+  border-radius: 50%;
+}
+
+/* Deletar */
+button.delete mat-icon {
+  color: #e03131; /* vermelho */
+}
+
+button.delete:hover {
+  background-color: #ffebee; /* fundo leve no hover */
+  border-radius: 50%;
+}
+
+/* body */
+.card-body {
+  margin-top: 4px;
+   padding-top: 0;
+}
+.cliente {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #444;
+  margin: 8px 0;
+  font-size: 15px;
+}
+.icon-sm {
+  font-size: 20px;
+  color: #747373;
+}
+
+/* dates */
+.datas {
+  margin: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #444;
+  font-size: 15px;
+}
+.date-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px; 
+}
+
+/* separator and value */
+.separator {
+  margin-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+.valor {
+  margin-top: 10px;
+  color: #1b5e20;
+  font-weight: 700;
+  font-size: 16px;
+}
