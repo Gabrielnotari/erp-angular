@@ -172,6 +172,44 @@ deleteProjeto(id: string): Observable<any> {
 }
 
 
+/** CLIENTE API */
+getAllClientes() {
+  return this.http.get(`${ApiService.BASE_URL}/clientes/todos`, {
+    headers: this.getHeader(),
+  });
+}
+
+deleteCliente(id: number) {
+  return this.http.delete(`${ApiService.BASE_URL}/clientes/deletar/${id}`, {
+    headers: this.getHeader(),
+  });
+}
+
+getClienteById(id: number) {
+  return this.http.get(`${ApiService.BASE_URL}/clientes/${id}`, {
+    headers: this.getHeader(),
+  });
+}
+
+getProjetosByCliente(id: number) {
+  return this.http.get(`${ApiService.BASE_URL}/clientes/${id}/projetos`, {
+    headers: this.getHeader(),
+  });
+}
+
+addCliente(body: any) {
+  return this.http.post(`${ApiService.BASE_URL}/clientes/add`, body, {
+    headers: this.getHeader(),
+  });
+}
+
+updateCliente(id: number, body: any) {
+  return this.http.put(`${ApiService.BASE_URL}/clientes/atualizar/${id}`, body, {
+    headers: this.getHeader(),
+  });
+}
+
+
 
 
 

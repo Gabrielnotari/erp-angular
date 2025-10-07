@@ -36,6 +36,11 @@
           <i class="material-icons">assignment</i> Projetos
         </a>
       </li>
+      <li *ngIf="isAdmin()">
+        <a routerLink="/clientes" routerLinkActive="active">
+          <i class="material-icons">group</i> Clientes
+        </a>
+      </li>
       <li *ngIf="isAuth()">
         <a routerLink="/compra" routerLinkActive="active">
           <i class="material-icons">shopping_cart</i> Compras

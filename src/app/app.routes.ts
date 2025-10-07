@@ -16,6 +16,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ImagemComponent } from './imagem/imagem.component';
 import { AddEditProjetoComponent } from './add-edit-projeto/add-edit-projeto.component';
 import { ProjetoComponent } from './projeto/projeto.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import { AddEditClienteComponent } from './add-edit-cliente/add-edit-cliente.component';
 
 export const routes: Routes = [
 
@@ -31,6 +33,10 @@ export const routes: Routes = [
   { path: 'projetos', component: ProjetoComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
   { path: 'edit-projeto/:projetoId', component: AddEditProjetoComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
   { path: 'add-projeto', component: AddEditProjetoComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
+
+  { path: 'clientes', component: ClienteComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
+  { path: 'edit-cliente/:clienteId', component: AddEditClienteComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
+  { path: 'add-cliente', component: AddEditClienteComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
 
   { path: 'produtos', component: ProdutoComponent, canActivate:[GuardService], data: {requiresAdmin: true} },
   { path: 'edit-produto/:produtoId', component: AddEditProdutoComponent, canActivate:[GuardService], data: {requiresAdmin: true} },

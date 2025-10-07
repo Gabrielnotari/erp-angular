@@ -4,13 +4,13 @@
     width: 50%;
     margin: 0 auto; /* Centralizar o form na pagina */
     margin-top: 3rem;
-    box-shadow: 0 1px 1px #008080;
+    box-shadow: 0 1px 1px #2e7d32;
     }
      
     .fornecedor-form-page h1 {
     font-size: 2rem;
     font-weight: bold;
-    color: #008080;
+    color: #2e7d32;
     margin-bottom: 1.5rem;
     text-align: center;
     }
@@ -38,13 +38,13 @@
     }
      
     .fornecedor-form-page .form-group input:focus {
-    border-color: #008080;
+    border-color: #2e7d32;
     outline: none;
     }
      
     .fornecedor-form-page button[type="submit"] {
     padding: 13px 20px;
-    background-color: #008080;
+    background-color: #2e7d32;
     color: white;
     border: none;
     border-radius: 5px;

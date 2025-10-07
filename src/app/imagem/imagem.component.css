@@ -26,19 +26,20 @@
 }
 
 .imagem-container input[type="text"]:focus {
-  border-color: #009688;
+  border-color: #2e7d32;
 }
 
 .imagem-container button {
   padding: 10px 20px;
   margin-left: 10px;
   font-size: 16px;
-  background-color: #009688;
+  background-color: #2e7d32;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-weight: normal;
 }
 
 .imagem-container button:disabled {

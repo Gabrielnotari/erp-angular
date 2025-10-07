@@ -1,0 +1,89 @@
+.modal-container {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+   width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.modal-header p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+.btn-cancelar {
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: normal;
+   font-size: 16px;
+}
+
+.btn-salvar {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.btn-salvar:hover {
+  background-color: #256428;
+}
+
+.message {
+  text-align: center;
+  color: #33691e;
+  background: #f1f8e9;
+  border: 1px solid #c5e1a5;
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 10px;
+}

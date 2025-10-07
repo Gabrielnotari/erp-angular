@@ -1,0 +1,75 @@
+<div class="clientes-container">
+  <!-- Cabeçalho -->
+  <div class="header">
+    <h2>Clientes</h2>
+    <p>Gerencie seus clientes cadastrados</p>
+  </div>
+
+  <!-- Barra de ferramentas -->
+  <div class="toolbar">
+    <input
+      type="text"
+      placeholder="Buscar por nome ou email..."
+      [(ngModel)]="filtro"
+      class="search-input"
+    />
+    <button class="btn-novo" (click)="navigateToAddClientePage()">
+      + Novo Cliente
+    </button>
+  </div>
+
+  <!-- Mensagem de status -->
+  <div class="message" *ngIf="message">{{ message }}</div>
+
+  <!-- Cards de clientes -->
+  <div class="cards-container">
+    <div class="card" *ngFor="let cliente of clientesFiltrados">
+      <!-- Header do card -->
+      <div class="card-header">
+        <h3 class="cliente-nome">{{ cliente.nome }}</h3>
+
+        <div class="top-actions">
+          <button
+            mat-icon-button
+            class="edit"
+            (click)="navigateToEditClientePage(cliente.id)"
+            title="Editar"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            class="delete"
+            (click)="handleDeleteCliente(cliente.id)"
+            title="Excluir"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Corpo do card -->
+      <div class="card-body">
+        <p class="projetos">
+          {{ cliente.qtdProjetos || 0 }} projeto(s)
+        </p>
+
+        <p class="info">
+          <mat-icon class="icon-sm" fontSet="material-icons">mail</mat-icon>
+          {{ cliente.email }}
+        </p>
+
+        <p class="info">
+          <mat-icon class="icon-sm" fontSet="material-icons">call</mat-icon>
+          {{ cliente.telefone }}
+        </p>
+
+        <p class="info">
+          <mat-icon class="icon-sm" fontSet="material-icons">location_on</mat-icon>
+          {{ cliente.endereco }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
