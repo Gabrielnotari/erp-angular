@@ -25,11 +25,25 @@ export class ProjetoComponent implements OnInit {
     this.getProjetos();
   }
 
-  // projeto.component.ts (dentro da classe)
+  
 getStatusClass(status: string): string {
   if (!status) return '';
   return status.toString().trim().replace(/\s+/g, '_').toUpperCase();
 }
+
+traduzirStatus(status: string): string {
+  switch (status?.toUpperCase()) {
+    case 'AGUARDANDO_INICIO':
+      return 'Aguardando início';
+    case 'EM_PRODUCAO':
+      return 'Em produção';
+    case 'FINALIZADO':
+      return 'Finalizado';
+    default:
+      return status;
+  }
+}
+
 
 
  get projetosFiltrados() {

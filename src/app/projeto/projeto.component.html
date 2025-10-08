@@ -24,7 +24,7 @@
           <div class="title-status">
             <h3 class="project-title">{{ projeto.nomeProjeto }}</h3>
             <span class="status" [ngClass]="getStatusClass(projeto.status)">
-              {{ projeto.status }}
+               {{ traduzirStatus(projeto.status) }}
             </span>
           </div>
         </div>

@@ -7,28 +7,31 @@
     <form (ngSubmit)="handleSubmit()" #form="ngForm">
       <!-- Nome do Projeto -->
       <div class="form-group">
-        <label for="nome">Nome do Projeto</label>
+        <label for="nomeProjeto">Nome do Projeto</label>
         <input
           type="text"
-          id="nome"
-          [(ngModel)]="formData.nome"
-          name="nome"
+          id="nomeProjeto"
+          [(ngModel)]="formData.nomeProjeto"
+          name="nomeProjeto"
           placeholder="Digite o nome do projeto"
           required
         />
       </div>
 
-      <!-- Cliente -->
+      <!-- Cliente (agora com dropdown dinâmico) -->
       <div class="form-group">
         <label for="cliente">Cliente</label>
-        <input
-          type="text"
+        <select
           id="cliente"
-          [(ngModel)]="formData.cliente"
-          name="cliente"
-          placeholder="Digite o nome do cliente"
+          [(ngModel)]="formData.clienteId"
+          name="clienteId"
           required
-        />
+        >
+          <option value="">Selecione um cliente</option>
+          <option *ngFor="let c of clientes" [value]="c.id">
+            {{ c.nome }}
+          </option>
+        </select>
       </div>
 
       <!-- Status -->
@@ -90,8 +93,17 @@
 
       <!-- Botões -->
       <div class="actions">
-        <button type="button" class="btn cancel" (click)="cancelar()">Cancelar</button>
-        <button type="submit" class="btn save">
+        <button
+          type="button"
+          class="btn cancel"
+          (click)="cancelar()"
+        >
+          Cancelar
+        </button>
+        <button
+          type="submit"
+          class="btn save"
+        >
           {{ isEditing ? "Editar Projeto" : "Adicionar Projeto" }}
         </button>
       </div>

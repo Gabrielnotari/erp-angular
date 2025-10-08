@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
    authStatuschanged = new EventEmitter<void>();
-  private static BASE_URL = 'http://localhost:8080/api';
+  public static BASE_URL = 'http://localhost:8080/api';
   private static ENCRYPTION_KEY = "gabriel123";
   
   constructor(private http: HttpClient) {}

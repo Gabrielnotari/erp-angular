@@ -1,71 +1,94 @@
 <div class="dashboard-container">
-  <h1>Dashboard de Orçamentos</h1>
+  <h2>Dashboard</h2>
+  <p>Visão geral do seu negócio</p>
 
-  <div style="margin-bottom: 50px; margin-top: 30px">
-    <label>Selecionar Mês:</label>
-    <select [(ngModel)]="selectedMonth">
-      <option *ngFor="let mes of meses" [value]="mes.valor">
-        {{ mes.nome }}
-      </option>
-    </select>
+  <!--Cards superiores -->
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <p>Clientes Ativos</p>
+        <i class="material-icons">groups</i>
+      </div>
+      <h3>{{ data?.clientesAtivos || 0 }}</h3>
+      <span class="text-green">+12% este mês</span>
+    </div>
 
-    <label>Selecionar Ano:</label>
-    <select [(ngModel)]="selectedYear">
-      <option *ngFor="let ano of anos" [value]="ano">{{ ano }}</option>
-    </select>
+    <div class="card">
+      <div class="card-header">
+        <p>Projetos em Andamento</p>
+        <i class="material-icons">calendar_today</i>
+      </div>
+      <h3>{{ data?.projetosAndamento || 0 }}</h3>
+      <span class="text-green">+3 novos</span>
+    </div>
 
-    <button (click)="loadMonthlyData()">Exibir Dados Mensais</button>
+    <div class="card">
+      <div class="card-header">
+        <p>Itens em Estoque</p>
+        <i class="material-icons">inventory_2</i>
+      </div>
+      <h3>{{ data?.itensEstoque || 0 }}</h3>
+      <span class="text-red">-8% este mês</span>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <p>Receita do Mês</p>
+        <i class="material-icons">attach_money</i>
+      </div>
+      <h3>R$ {{ data?.receitaMes | number: '1.0-0' }}</h3>
+      <span class="text-green">+23% vs mês anterior</span>
+    </div>
   </div>
 
-  <div style="margin-bottom: 30px">
-    <h2>Quantidade de Orçamentos por Tipo</h2>
-    <ngx-charts-bar-vertical
-      [view]="view"
-      [scheme]="'vivid'"
-      [results]="orcamentoTypeData"
-      [gradient]="false"
-      [xAxis]="true"
-      [yAxis]="true"
-      [showXAxisLabel]="true"
-      [showYAxisLabel]="true"
-      xAxisLabel="Tipo de Orçamento"
-      yAxisLabel="Contagem"
-      [animations]="animations"
-    >
-    </ngx-charts-bar-vertical>
-  </div>
+  <!-- Seção inferior em grid (Projetos + Alertas lado a lado) -->
+  <div class="dashboard-content">
+    <!-- Projetos Recentes -->
+    <div class="projetos-card">
+      <div class="projetos-header">
+        <i class="material-icons">trending_up</i>
+        <h4>Projetos Recentes</h4>
+      </div>
 
-  <div style="margin-bottom: 30px">
-    <h2>Contagem total de orçamentos por tipo</h2>
-    <ngx-charts-pie-chart
-      [view]="view"
-      [scheme]="'cool'"
-      [results]="orcamentoAmountData"
-      [legend]="showLegend"
-      [labels]="showLabels"
-      [doughnut]="false"
-      [animations]="animations"
-    >
-    </ngx-charts-pie-chart>
-  </div>
+      <div *ngFor="let projeto of data?.projetosRecentes" class="projeto-item">
+        <div class="projeto-top">
+          <span class="projeto-nome">
+            {{ projeto.nomeProjeto }} - {{ projeto.clienteNome }}
+          </span>
+          <span class="progresso-texto">
+            {{ getProgresso(projeto.status) }}%
+          </span>
+        </div>
+        <div class="progress-container">
+          <div
+            class="progress-bar"
+            [style.width.%]="getProgresso(projeto.status)"
+          ></div>
+        </div>
+        <p class="status-text">{{ traduzirStatus(projeto.status) }}</p>
+      </div>
+    </div>
 
-  <h2 style="margin-bottom: 50px">Gráfico de Orçamentos Mensais</h2>
+    <!-- Alertas de Estoque (fica ao lado) -->
+    <div class="alertas-card">
+      <div class="alertas-header">
+        <i class="material-icons">error</i>
+        <h4>Alertas de Estoque</h4>
+      </div>
 
-  <div *ngIf="monthlyOrcamentoData.length">
-    <ngx-charts-bar-vertical
-      [view]="view"
-      [scheme]="'flame'"
-      [results]="monthlyOrcamentoData"
-      [gradient]="false"
-      [xAxis]="true"
-      [yAxis]="true"
-      [legend]="showLegend"
-      [showXAxisLabel]="true"
-      [showYAxisLabel]="true"
-      xAxisLabel="Dia do mês"
-      yAxisLabel="Preço total"
-      [animations]="animations"
-    >
-    </ngx-charts-bar-vertical>
+      <div *ngIf="alertasEstoque.length === 0" class="alerta-item">
+        <span>Nenhum alerta no momento</span>
+      </div>
+
+      <div *ngFor="let alerta of alertasEstoque" class="alerta-item">
+        <div>
+          <p class="alerta-nome">{{ alerta.nome }}</p>
+          <small>{{ alerta.quantidade }} unidades</small>
+        </div>
+        <span class="alerta-status" [ngClass]="getStatusClasse(alerta.status)">
+          {{ alerta.status }}
+        </span>
+      </div>
+    </div>
   </div>
 </div>

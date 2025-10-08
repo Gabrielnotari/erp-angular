@@ -114,14 +114,15 @@
 
 /* status badge */
 .status {
-  font-size: 11px;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
   display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 4px 10px;
+  text-transform: none; /* mantém acentos e capitalização normal */
+  margin-left: 14px; 
 }
+
 
 /* map de cores por status (normalizei as classes via getStatusClass) */
 .status.AGUARDANDO_INICIO {

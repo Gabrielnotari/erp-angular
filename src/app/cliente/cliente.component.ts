@@ -71,7 +71,7 @@ export class ClienteComponent implements OnInit {
 
   // Deletar cliente
   handleDeleteCliente(clienteId: number): void {
-    if (window.confirm('Tem certeza de que deseja excluir este cliente?')) {
+    if (window.confirm('Tem certeza que deseja excluir permanentemente os dados deste cliente? Essa ação é irreversível conforme o direito de exclusão previsto na LGPD.')) {
       this.apiService.deleteCliente(clienteId).subscribe({
         next: (res: any) => {
           if (res.status === 200) {

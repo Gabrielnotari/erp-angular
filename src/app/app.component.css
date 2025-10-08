@@ -7,12 +7,12 @@
 .sidebar {
   width: 220px;
   height: 100vh;
-  background: #ffffff;
+  background: #f7fff7;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px 0;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #e9e9e9;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
   position: fixed;
   left: 0;
@@ -21,7 +21,7 @@
 
 /* Logo */
 .sidebar img {
-  max-width: 300px;
+  max-width: 100%;
   height: auto;
   margin: 10px auto 20px auto;
   display: block;
@@ -49,7 +49,7 @@
   border-radius: 6px;
   font-size: 0.95rem;
   font-weight: 500;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: transform 0.4s ease;
 }
 
 /* Hover */
@@ -60,7 +60,7 @@
 
 /* Active com Angular routerLinkActive */
 .nav-links li a.active {
-  background: #f1f8f4;
+  background: #b9f8d4;
   color: #1b5e20;
   font-weight: 600;
 }
@@ -73,6 +73,16 @@
   overflow-y: auto;
   transition: margin-left 0.3s ease;
 }
+
+.logo-clickable {
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.logo-clickable:hover {
+  transform: scale(1.05);
+}
+
 
 /* Responsivo */
 @media (max-width: 768px) {

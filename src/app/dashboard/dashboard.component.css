@@ -1,25 +1,246 @@
- 
 .dashboard-container {
-    padding: 20px;
-    }
-     
-    .dashboard-container select {
-    padding: 8px;
-    font-size: 17px;
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    margin: 0px 10px;
-    }
-     
-    h1,
-    h2 {
-    text-align: center;
-    }
-     
-    ngx-charts-bar-vertical,
-    ngx-charts-pie-chart {
-    display: block;
-    margin: auto;
-    }
-     
-    
+  padding: 20px 40px;
+  font-family: 'Inter', sans-serif;
+  
+}
+
+.dashboard-container h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #1a1a1a;
+}
+
+.dashboard-container p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 240px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.card-header i {
+  font-size: 20px;
+  color: #2c3e50;
+}
+
+.card h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 10px 0 6px 0;
+}
+
+.text-green {
+  color: #16a34a;
+  font-size: 13px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.text-red {
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.projetos-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.projetos-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.projetos-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.projetos-header i {
+  font-size: 20px;
+  color: #1e3a1e; /* verde escuro */
+}
+
+.projetos-header h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.projeto-item {
+  margin-bottom: 18px;
+}
+
+.projeto-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projeto-nome {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 15px;
+}
+
+.progresso-texto {
+  font-size: 15px;
+  color: #555;
+}
+
+.progress-container {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  height: 8px;
+  margin: 6px 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #1e3a1e;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+
+.status-text {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+/* Mantém o bloco de projetos alinhado à esquerda com os cards */
+.projetos-card {
+  grid-column: span 2; /* ou span 4 se quiser que ocupe toda a linha */
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 0; /* 🔹 remove o desnível */
+}
+
+.alertas-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  grid-column: span 2; /* ocupa metade do grid, lado a lado com Projetos */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+
+}
+
+.alertas-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.alertas-card h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.alertas-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.alertas-header i {
+  color: #cfcd45;
+  font-size: 30px;
+}
+
+.alerta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.alerta-nome {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.alerta-status {
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Cores por status */
+.alerta-status.baixo {
+  background: #f8ecbb;
+  color: #b58c00;
+}
+
+.alerta-status.critico {
+  background: #ffe5e5;
+  color: #b10000;
+}
+
+.alerta-status.reabastecer {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
